@@ -9,9 +9,29 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Step1.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Step2.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2307F3AF1C3AA75800EA7995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2307F3BC1C3AA8F700EA7995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>23F91A4A1C31074F004E4D34</key>
 		<dict>
 			<key>primary</key>
