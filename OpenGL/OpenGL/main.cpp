@@ -7,12 +7,9 @@
 //
 
 #include <iostream>
-#include "Step1.h"
-
+using namespace std;
 int main(int argc, char * argv[]) {
     // insert code here...
-    
-    Step1* step1 = new Step1();
-    
-    return step1->exec(argc, argv);
+    cout << "Hello OpenGL" << endl;
+    return 0;
 }
