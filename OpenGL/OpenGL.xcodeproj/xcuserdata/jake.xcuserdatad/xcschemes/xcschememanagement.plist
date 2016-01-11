@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>Step4.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>2355AC121C438A42005885FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2355AC1F1C43961C005885FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
