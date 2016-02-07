@@ -49,6 +49,11 @@
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
+		<key>Step9.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -88,6 +93,11 @@
 			<true/>
 		</dict>
 		<key>2355AC461C43A15D005885FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C37FB91C6725B1009BF2AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
