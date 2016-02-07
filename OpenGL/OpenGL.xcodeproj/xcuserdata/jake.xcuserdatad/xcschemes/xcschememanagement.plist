@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Step10.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Step2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -98,6 +103,11 @@
 			<true/>
 		</dict>
 		<key>23C37FB91C6725B1009BF2AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C37FC61C672DCE009BF2AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
