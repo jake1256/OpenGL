@@ -1,16 +1,17 @@
 //
 //  main.cpp
-//  Step9
+//  Step10
 //
 //  Created by Jake on 2016/02/07.
 //  Copyright © 2016年 Jake. All rights reserved.
 //
 
-// step9 3D Animation
+// step10 3D Animation
 
 #include <stdlib.h>
 #include <GLUT/glut.h>
 
+// 頂点
 GLdouble vertex[][3] = {
     { 0.0, 0.0, 0.0 },
     { 1.0, 0.0, 0.0 },
@@ -22,6 +23,17 @@ GLdouble vertex[][3] = {
     { 0.0, 1.0, 1.0 }
 };
 
+// 面
+int face[][4] = {
+    { 0, 1, 2, 3 }, /* A-B-C-D を結ぶ面 */
+    { 1, 5, 6, 2 }, /* B-F-G-C を結ぶ面 */
+    { 5, 4, 7, 6 }, /* F-E-H-G を結ぶ面 */
+    { 4, 0, 3, 7 }, /* E-A-D-H を結ぶ面 */
+    { 4, 5, 1, 0 }, /* E-F-B-A を結ぶ面 */
+    { 3, 2, 6, 7 }  /* D-C-G-H を結ぶ面 */
+};
+
+// 稜線
 int edge[][2] = {
     { 0, 1 },
     { 1, 2 },
@@ -37,6 +49,16 @@ int edge[][2] = {
     { 3, 7 }
 };
 
+//色
+GLdouble color[][3] = {
+    { 1.0, 0.0, 0.0 }, /* 赤 */
+    { 0.0, 1.0, 0.0 }, /* 緑 */
+    { 0.0, 0.0, 1.0 }, /* 青 */
+    { 1.0, 1.0, 0.0 }, /* 黄 */
+    { 1.0, 0.0, 1.0 }, /* マゼンタ */
+    { 0.0, 1.0, 1.0 }  /* シアン 　*/
+};
+
 void idle(void){
     glutPostRedisplay();
 }
@@ -44,21 +66,24 @@ void idle(void){
 void display(void)
 {
     int i;
+    int j;
     static int r = 0;
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     gluLookAt(3.0, 4.0, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     glRotated((double)r, 0.0, 1.0, 0.0);
     
     //glRotated(25.0, 0.0, 1.0, 0.0);// 傾かせる
     glColor3d(0.0, 0.0, 0.0);
-    glBegin(GL_LINES);
-    for (i = 0; i < 12; i++) {
-        glVertex3dv(vertex[edge[i][0]]);
-        glVertex3dv(vertex[edge[i][1]]);
+    glBegin(GL_QUADS);
+    for (i = 0; i < 6; i++) {
+        glColor3dv(color[i]);
+        for(j = 0; j < 4 ; j++){
+            glVertex3dv(vertex[face[i][j]]);
+        }
     }
     glEnd();
-    //glFlush();
+    
     glutSwapBuffers(); // 画面入れ替え
     
     if (++r >= 360) {
@@ -76,11 +101,17 @@ void resize(int w , int h){
 
 void init(void){
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    // デプスバッファを有効に
+    glEnable(GL_DEPTH_TEST);
+    
+    // カリングを有効に
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT); // GL_BACKにすると裏側を消去
 }
 
 void mouse(int button , int state , int x , int y){
     switch (button) {
-        // 押している間進む
+            // 押している間進む
         case GLUT_LEFT_BUTTON:
             if (state == GLUT_DOWN) {
                 glutIdleFunc(idle);
@@ -89,7 +120,7 @@ void mouse(int button , int state , int x , int y){
                 glutIdleFunc(0); // stop
             }
             break;
-        // 1クリックごとに進む
+            // 1クリックごとに進む
         case GLUT_RIGHT_BUTTON:
             if(state == GLUT_DOWN){
                 glutPostRedisplay();
@@ -115,7 +146,7 @@ void keyboard(unsigned char key , int x , int y){
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE); // ダブルバッファリングをON
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH); // ダブルバッファリングをON
     glutCreateWindow(argv[0]);
     glutDisplayFunc(display);
     glutReshapeFunc(resize);
