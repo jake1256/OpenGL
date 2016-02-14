@@ -77,6 +77,9 @@ GLfloat light1pos[] = { 5.0, 3.0, 0.0, 1.0 };
 // 光源２の色
 GLfloat green[] = { 0.0, 1.0, 0.0, 1.0 };
 
+/* 材質の色 */
+GLfloat red[] = { 0.8, 0.2, 0.2, 1.0 };
+
 void idle(void){
     glutPostRedisplay();
 }
@@ -96,6 +99,9 @@ void display(void)
     
     
     glRotated((double)r, 0.0, 1.0, 0.0);
+    
+    /* 図形の色(赤) */
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE, red);
     
     glColor3d(0.0, 0.0, 0.0);
     glBegin(GL_QUADS);
