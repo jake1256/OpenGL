@@ -14,6 +14,21 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Step10.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Step11.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
+		<key>Step12.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>Step2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -44,6 +59,16 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>Step8.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Step9.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -53,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>2307F3BC1C3AA8F700EA7995</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>232AEC291C5F8E41000FB7D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,6 +108,26 @@
 			<true/>
 		</dict>
 		<key>2355AC461C43A15D005885FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23B431E71C7068E30066ED52</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23BBB9AE1C707B5900EDB553</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C37FB91C6725B1009BF2AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23C37FC61C672DCE009BF2AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
